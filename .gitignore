@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code files
+.vscode/
+
+# Local Firebase files (if any)
+.firebase/
+firebase-debug.log
