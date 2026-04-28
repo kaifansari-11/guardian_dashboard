@@ -4,7 +4,7 @@ Guardian Dashboard is the centralized monitoring web interface for the Guardian 
 🚀 Key Features
 Real-Time SOS Monitoring: Instantly populates active emergency alerts as they are triggered from the mobile app.
 
-Live Map Integration: Tracks the user's precise coordinates with high-frequency updates during an active SOS event.
+Live Map Integration: Tracks the user's precise coordinates with high-frequency updates during an active SOS event using Leaflet.js.
 
 Evidence Vault: Stream and download the 15-second audio chunks uploaded by the Guardian mobile app for immediate situational awareness.
 
@@ -17,36 +17,41 @@ The dashboard acts as the primary receiver in the Guardian ecosystem:
 
 SOS Triggered: Mobile app sends data to Firebase.
 
-Live Sync: Dashboard listens to Firestore changes and updates the UI instantly.
+Live Sync: Dashboard listens to Firestore changes using the Firebase Web SDK and updates the UI instantly.
 
 Actionable Data: Trusted contacts use the dashboard to coordinate with emergency services.
 
 🛠️ Technical Stack
-Frontend: [Add your Framework, e.g., React / Vue / HTML&JS]
+Frontend: Vanilla HTML5, CSS3, and JavaScript (ES6+)
 
-Backend Integration: Cloud Firestore (Live Data Sync)
+Maps: Leaflet.js (OpenStreetMap)
 
-Media Handling: Firebase Storage (Audio playback)
+Backend Integration: Firebase Firestore (Compat SDK)
 
-Maps: [Add your Maps API, e.g., Google Maps API / Leaflet]
+Media Handling: Firebase Storage
 
-⚙️ Setup & Deployment
-Clone the Repo: git clone https://github.com/kaifansari-11/guardian_dashboard.git
+⚙️ Setup & Local Development
+Since this project is built using vanilla web technologies, no complex installation is required:
 
-Firebase Config:
+Clone the Repo: ```bash
+git clone https://github.com/kaifansari-11/guardian_dashboard.git
 
-Create a .env file in the root directory.
+Firebase Configuration:
 
-Add your Firebase configuration keys (refer to .env.example).
+Open index.html.
 
-Install Dependencies: npm install (or your relevant command).
+Replace the firebaseConfig object with your own credentials from the Firebase Console.
 
-Local Run: npm start.
+Run the Project:
+
+Simply open index.html in any modern web browser.
+
+Or, use the Live Server extension in VS Code for hot-reloading.
 
 🌐 Live Demo
 The dashboard is hosted at: https://guardian-live.netlify.app
 
 Note: For security, the dashboard requires a User ID (uid) in the URL to display data. In a real emergency, this link is automatically generated and sent to trusted contacts via SMS.
 
-To view the interface layout, you can use a placeholder:
+To view the interface layout, use this demo link:
 https://guardian-live.netlify.app/?uid=DEMO_USER_ID
